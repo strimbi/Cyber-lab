@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { SensorsModule } from './sensors/sensors.module';
 
 @Module({
   imports: [
@@ -11,12 +12,13 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: 'PASS',
+      password: 'YES',
       database: 'lab_db',
       autoLoadEntities: true,
       synchronize: true,
     }),
     UsersModule,
+    SensorsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

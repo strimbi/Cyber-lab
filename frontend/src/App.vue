@@ -16,21 +16,9 @@ onMounted(async () => {
 </script>
 
 <template>
-  <main>
-    <h1>Users</h1>
-    <p v-if="error" style="color: red">{{ error }}</p>
-    <table v-else>
-      <thead>
-        <tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Status</th></tr>
-      </thead>
-      <tbody>
-        <tr v-for="user in users" :key="user.id">
-          <td>{{ user.id }}</td>
-          <td>{{ user.firstName }}</td>
-          <td>{{ user.lastName }}</td>
-          <td>{{ user.isActive }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </main>
+  <nav style="display:flex; gap:1rem; padding:1rem; border-bottom:1px solid #ccc">
+    <RouterLink to="/sensors">Sensors</RouterLink>
+    <RouterLink to="/sensors/new">Add sensor</RouterLink>
+  </nav>
+  <main style="padding:1rem"><RouterView /></main>
 </template>
